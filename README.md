@@ -38,6 +38,7 @@ All commands are run from the root of the project:
 ## 🔗 Pages
 
 - `/` — Homepage  
+- `/portfolio` — Portfolio page  
 - `/pricing` — React pricing calculator  
 - `/contact` — React contact form  
 
