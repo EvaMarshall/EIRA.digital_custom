@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+---
+import Layout from '../layouts/Layout.astro';
+---
 
-```sh
-npm create astro@latest -- --template minimal
-```
+<Layout>
+  <section class="max-w-3xl mx-auto py-20 px-6">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight">
+      Welcome to <span class="text-blue-600">EIRA.digital</span>
+    </h1>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+    <p class="mt-6 text-xl text-neutral-600 leading-relaxed">
+      This site is built with <strong>Astro</strong> and enhanced with 
+      <strong>React islands</strong> for interactive components like the 
+      pricing calculator and contact form.  
+      It’s a modern, fast, and flexible setup for showcasing web design 
+      and development work.
+    </p>
 
-## 🚀 Project Structure
+    <div class="mt-10 space-y-4">
+      <h2 class="text-2xl font-semibold">📁 Project Structure</h2>
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
+      <pre class="bg-neutral-900 text-neutral-100 p-4 rounded-lg text-sm overflow-x-auto">
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/      → React + Astro components
+│   ├── layouts/         → Site-wide layout wrapper
+│   └── pages/           → Each .astro file becomes a route
 └── package.json
-```
+      </pre>
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+      <p class="text-neutral-600">
+        Pages inside <code>src/pages/</code> automatically become routes.  
+        Components live in <code>src/components/</code>, and global layout 
+        elements live in <code>src/layouts/</code>.
+      </p>
+    </div>
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+    <div class="mt-12">
+      <a 
+        href="/pricing" 
+        class="inline-block px-6 py-3 bg-black text-white rounded-lg text-lg font-medium hover:bg-neutral-800 transition"
+      >
+        View Pricing Calculator
+      </a>
+    </div>
+  </section>
+</Layout>
