@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Global body text */
+  body {
+    @apply font-body font-light text-body;
+  }
+
+  /* Headings */
+  h1 {
+    @apply font-heading font-light text-h1;
+  }
+
+  h2 {
+    @apply font-heading font-light text-h2;
+  }
+
+  /* General text elements */
+  p, li, span, a {
+    @apply font-light text-body;
+  }
+   body {
+    @apply bg-[#F7F7F5] text-secondary;
+  }
+
+  /* Navigation + dropdown inherit light weight automatically
+     because <a> and <li> are covered above */
+}
+
+/* Global layout container */
+.container-eira {
+  @apply max-w-[1600px] mx-auto px-10;
+}
+.hero-container {
+@apply w-full max-w-[1600px] mx-auto pt-20 px-10 text-left;}
+
+.content-container {
+  @apply w-full max-w-[1600px] mx-auto pt-5 pl-10 pr-10 text-left;
+}
+

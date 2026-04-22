@@ -1,9 +1,158 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EIRA Web Development</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
   <body class="bg-neutral-50 text-neutral-900">
+    <!-- NAVIGATION -->
+    <nav
+      id="nav"
+      class="absolute top-0 left-0 w-full z-50 text-secondary py-8 px-3 transition-all duration-300"
+    >
+      <div class="container-eira flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="flex items-center py-4">
+          <img src="/EiraPinkNBG2.png" alt="EIRA logo" class="h-14 w-auto" />
+        </a>
+
+        <ul class="hidden sm:flex gap-8 font-medium">
+          <li>
+            <a
+              href="/"
+              class="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[20px] lg:text-[24px]"
+              >Home</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="/#portfolio"
+              class="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[20px] lg:text-[24px]"
+              >Portfolio</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="/contact"
+              class="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[20px] lg:text-[24px]"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="hamburger"
+          class="flex flex-col gap-1.5 w-8 cursor-pointer sm:hidden z-20 relative"
+        >
+          <span class="w-8 h-0.5 bg-secondary"></span>
+          <span class="w-8 h-0.5 bg-secondary"></span>
+          <span class="w-8 h-0.5 bg-secondary"></span>
+
+          <!-- Mobile Menu -->
+          <div
+            id="mobile-menu"
+            class="hidden pointer-events-none absolute right-0 top-full mt-7 py-3 px-4
+                   text-secondary text-left flex flex-row gap-6
+                   text-[18px] font-medium z-10"
+          >
+            <a href="/" class="hover:opacity-70">Home</a>
+            <a href="/#portfolio" class="hover:opacity-70">Portfolio</a>
+            <a href="/contact" class="hover:opacity-70">Contact</a>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <!-- PAGE CONTENT -->
     <slot />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("hamburger") as HTMLElement | null;
+        const menu = document.getElementById(
+          "mobile-menu",
+        ) as HTMLElement | null;
+        const nav = document.getElementById("nav") as HTMLElement | null;
+
+        if (!btn || !menu || !nav) return;
+
+        let open = false;
+
+        // HAMBURGER TOGGLE
+        btn.addEventListener("click", (e: MouseEvent) => {
+          e.stopPropagation();
+          open = !open;
+
+          menu.classList.toggle("hidden", !open);
+          menu.classList.toggle("pointer-events-none", !open);
+          menu.classList.toggle("pointer-events-auto", open);
+        });
+
+        // OUTSIDE CLICK CLOSES MENU
+        document.addEventListener("click", (e: MouseEvent) => {
+          const target = e.target as HTMLElement | null;
+          if (!target) return;
+
+          const isClickInside = btn.contains(target) || menu.contains(target);
+
+          if (!isClickInside) {
+            open = false;
+            menu.classList.add("hidden", "pointer-events-none");
+            menu.classList.remove("pointer-events-auto");
+          }
+        });
+
+        // SCROLL FADE-IN NAV
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            nav.classList.add(
+              "sticky",
+              "top-0",
+              "bg-bgsecondary/80",
+              "backdrop-blur-md",
+            );
+            nav.classList.remove("absolute");
+          } else {
+            nav.classList.remove(
+              "sticky",
+              "top-0",
+              "bg-bgsecondary/80",
+              "backdrop-blur-md",
+            );
+            nav.classList.add("absolute");
+          }
+        });
+      });
+    </script>
+
+    <footer class="bg-bgprimary py-10 pb-16">
+      <div class="content-container relative">
+        <!-- ICON (bottom-left) -->
+        <div class="absolute left-5 bottom-0 pt-5">
+          <img src="/iconEira.png" alt="EIRA icon" class="w-10 h-10" />
+        </div>
+
+        <!-- CENTERED TEXT -->
+        <div class="text-center text-primary">
+          © EIRA.digital 2026 •
+          <a href="/privacy" class="hover:opacity-70"> Privacy Policy </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
