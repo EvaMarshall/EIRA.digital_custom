@@ -72,9 +72,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full bg-bgsecondary py-20">
+    <section className="w-full bg-bgprimary py-20">
       <div className="content-container py-10">
-        <h1 className="text-4xl text-secondary text-center mb-10">
+        <h1 className="text-4xl text-primary text-center mb-10">
           Get in Touch
         </h1>
 
@@ -92,14 +92,14 @@ export default function ContactForm() {
 
               {/* Name */}
               <div className="flex flex-col space-y-2">
-                <label className="text-secondary text-lg">Name</label>
+                <label className="text-primary text-lg">Name</label>
                 <input
                   type="text"
                   name="name"
                   maxLength="200"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full bg-bgprimary text-primary border border-secondary/30 rounded-md px-4 py-3 focus:outline-none focus:border-secondary"
+                  className="w-full  text-primary border border-bgsecondary rounded-md px-4 py-3 focus:outline-none focus:border-secondary"
                 />
                 {errors.name && (
                   <p className="text-red-500 text-sm">{errors.name}</p>
@@ -108,14 +108,14 @@ export default function ContactForm() {
 
               {/* Email */}
               <div className="flex flex-col space-y-2">
-                <label className="text-secondary text-lg">Email</label>
+                <label className="text-primary text-lg">Email</label>
                 <input
                   type="email"
                   name="email"
                   maxLength="200"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full bg-bgprimary text-primary border border-secondary/30 rounded-md px-4 py-3 focus:outline-none focus:border-secondary"
+                  className="w-full  text-primary border border-bgsecondary rounded-md px-4 py-3 focus:outline-none focus:border-secondary"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm">{errors.email}</p>
@@ -124,14 +124,14 @@ export default function ContactForm() {
 
               {/* Message */}
               <div className="flex flex-col space-y-2">
-                <label className="text-secondary text-lg">Message</label>
+                <label className="text-primary text-lg">Message</label>
                 <textarea
                   name="message"
                   rows="6"
                   maxLength="2000"
                   value={form.message}
                   onChange={handleChange}
-                  className="w-full bg-bgprimary text-primary border border-secondary/30 rounded-md px-4 py-3 focus:outline-none focus:border-secondary"
+                  className="w-full text-primary border border-bgsecondary rounded-md px-4 py-3 focus:outline-none focus:border-secondary"
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-500 text-sm">{errors.message}</p>

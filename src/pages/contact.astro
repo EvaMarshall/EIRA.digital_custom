@@ -1,12 +1,10 @@
 ---
 import ContactForm from "../components/ContactForm.jsx";
-import Layout from '../layouts/Layout.astro';
----
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section
+	<section
 		class="relative w-full h-[70vh] bg-bgprimary bg-cover bg-center bg-no-repeat flex items-center"
 		style="background-image: url('/HeroDark2.jpg')"
 	>
@@ -26,5 +24,38 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</section>
 
-  <ContactForm client:load />
+	<ContactForm client:load />
+	<section class="bg-bgsecondary py-20 ">
+		<div class="content-container ">
+			<div class="grid md:grid-cols-3 gap-12 text-center">
+				<div class="space-y-3">
+					<a
+						href="tel:+33 6 12 34 56 78"
+						class="text-2xl text-secondary hover:text-[#D7B7C4]"
+					>
+						+33 6 76 33 59 85
+					</a>
+				</div>
+
+				<div class="space-y-3">
+					<a
+						href="mailto:eva@eira.digital"
+						class="text-2xl text-secondary hover:text-[#D7B7C4]"
+					>
+						eva&#64;eira&#46;digital
+					</a>
+				</div>
+
+				<div class="space-y-3">
+					<a
+						href="tel:+44 7918 653566"
+						class="text-2xl text-secondary hover:text-[#D7B7C4]"
+					>
+						+44 7918 653566
+					</a>
+				</div>
+			</div>
+		</div>
+		
+	</section>
 </Layout>

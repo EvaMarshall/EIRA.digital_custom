@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
   /* Global body text */
   body {
     @apply font-body font-light text-body;
@@ -18,10 +19,14 @@
   }
 
   /* General text elements */
-  p, li, span, a {
+  p,
+  li,
+  span,
+  a {
     @apply font-light text-body;
   }
-   body {
+
+  body {
     @apply bg-[#F7F7F5] text-secondary;
   }
 
@@ -33,10 +38,20 @@
 .container-eira {
   @apply max-w-[1600px] mx-auto px-10;
 }
+
 .hero-container {
-@apply w-full max-w-[1600px] mx-auto pt-20 px-10 text-left;}
+  @apply w-full max-w-[1600px] mx-auto pt-20 px-10 text-left;
+}
 
 .content-container {
   @apply w-full max-w-[1600px] mx-auto pt-5 pl-10 pr-10 text-left;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
