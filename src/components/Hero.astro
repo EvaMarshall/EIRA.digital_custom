@@ -1,0 +1,40 @@
+---
+// Optional: accept props later if you want dynamic titles or images
+const {
+  title = "Clean, modern websites for small businesses",
+  subtitle = "Design, development, hosting. The whole package, built with care.",
+  image = "/pinkmount.webp"
+} = Astro.props;
+---
+
+<section class="relative w-full h-[70vh] flex items-center overflow-hidden">
+
+  <picture>
+    <source
+      srcset="
+        /Hero-4000.webp 4000w,
+        /Hero-2400.webp 2400w,
+        /Hero-1600.webp 1600w,
+        /Hero-800.webp 800w
+      "
+      type="image/webp"
+    />
+    <img
+      src="/Hero-2400.webp"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+  </picture>
+
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative hero-container">
+    <h1 class="text-secondary text-[24px] xs:text-[26px] sm:text-[28px] md:text-[32px] lg:text-[36px]">
+      {title}
+    </h1>
+
+    <h2 class="text-secondary text-[18px] xs:text-[19px] sm:text-[20px] md:text-[21px] lg:text-[22px]">
+      {subtitle}
+    </h2>
+  </div>
+</section>

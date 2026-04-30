@@ -8,6 +8,13 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EIRA Web Development</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/A_Eira.png" />
+    <link rel="shortcut icon" href="/A_Eira.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/A_Eira-32.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/A_Eira-64.png" />
+    <link rel="apple-touch-icon" href="/A_Eira-180.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -125,6 +132,7 @@ import "../styles/global.css";
               "top-0",
               "bg-bgsecondary/80",
               "backdrop-blur-md",
+              "shadow-lg", // ← add this
             );
             nav.classList.remove("absolute");
           } else {
@@ -133,6 +141,7 @@ import "../styles/global.css";
               "top-0",
               "bg-bgsecondary/80",
               "backdrop-blur-md",
+              "shadow-lg", // ← remove it again
             );
             nav.classList.add("absolute");
           }
@@ -142,14 +151,14 @@ import "../styles/global.css";
 
     <footer class="bg-bgprimary pb-20 pt-10">
       <img
-        src="/linemoun.png"
+        src="/linemoun.webp"
         alt="Calm alpine detail"
         class="w-full h-auto rounded-lg object-cover opacity-25"
       />
       <div class="content-container relative">
         <!-- ICON (bottom-left) -->
         <div class="absolute left-5 bottom-0 pt-5">
-          <img src="/iconEira.png" alt="EIRA icon" class="w-10 h-10" />
+          <img src="/A_Eira.png" alt="EIRA icon" class="w-10 h-10" />
         </div>
 
         <!-- CENTERED TEXT -->
