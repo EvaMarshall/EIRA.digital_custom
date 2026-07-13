@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>EIRA Web Development</title><!-- Favicon --><link rel="icon" type="image/png" href="/A_Eira.png"><link rel="shortcut icon" href="/A_Eira.png"><link rel="icon" type="image/png" sizes="32x32" href="/A_Eira-32.png"><link rel="icon" type="image/png" sizes="64x64" href="/A_Eira-64.png"><link rel="apple-touch-icon" href="/A_Eira-180.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/contact.C5DqFSZf.css"></head> <body class="bg-neutral-50 text-neutral-900"> <!-- NAVIGATION --> <nav id="nav" class="absolute top-0 left-0 w-full z-50 text-secondary py-10 px-3 transition-all duration-300"> <div class="container-eira flex items-center justify-between"> <!-- Logo --> <a href="/" class="flex items-center py-4"> <img src="/EiraPinkNBG2.png" alt="EIRA logo" class="h-14 w-auto"> </a> <ul class="hidden sm:flex gap-8 font-medium"> <li> <a href="/" class="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[20px] lg:text-[24px]">Home</a> </li> <li> <a href="/pricing" class="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[20px] lg:text-[24px]">Pricing</a> </li> <li> <a href="/contact" class="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[20px] lg:text-[24px]">Contact</a> </li> </ul> <!-- Mobile Hamburger --> <button id="hamburger" class="flex flex-col gap-1.5 w-8 cursor-pointer sm:hidden z-20 relative"> <span class="w-8 h-0.5 bg-secondary"></span> <span class="w-8 h-0.5 bg-secondary"></span> <span class="w-8 h-0.5 bg-secondary"></span> <!-- Mobile Menu --> <div id="mobile-menu" class="hidden pointer-events-none absolute right-0 top-full mt-7 py-3 px-4
+                   text-secondary text-left flex flex-row gap-6
+                   text-[18px] font-medium z-10"> <a href="/" class="hover:opacity-70">Home</a> <a href="/pricing" class="hover:opacity-70">Pricing</a> <a href="/contact" class="hover:opacity-70">Contact</a> </div> </button> </div> </nav> <!-- PAGE CONTENT -->   <section class="relative w-full h-[70vh] flex items-center overflow-hidden"> <picture> <source srcset="
+        /Hero-4000.webp 4000w,
+        /Hero-2400.webp 2400w,
+        /Hero-1600.webp 1600w,
+        /Hero-800.webp 800w
+      " type="image/webp"> <img src="/Hero-2400.webp" alt="" class="absolute inset-0 w-full h-full object-cover"> </picture> <div class="absolute inset-0 bg-black/60"></div> <div class="relative hero-container"> <h1 class="text-secondary text-[24px] xs:text-[26px] sm:text-[28px] md:text-[32px] lg:text-[36px]"> Privacy Policy </h1> <h2 class="text-secondary text-[18px] xs:text-[19px] sm:text-[20px] md:text-[21px] lg:text-[22px]"> How your information is collected and used </h2> </div> </section> <section class="w-full bg-bgsecondary py-20"> <div class="content-container py-10"> <h2 class="text-4xl text-secondary py-10 text-center">
+We take your privacy seriously...
+</h2> <div class="max-w-prose mx-auto text-secondary leading-relaxed space-y-6"> <p>
+This website collects personal information only when a visitor chooses
+          to submit it through the contact form. This typically includes a name,
+          an email address, and the message provided.
+</p> <p>
+The information is used solely to respond to the enquiry. It is not
+          shared with third parties, and the website does not use analytics
+          tools, tracking scripts, advertising cookies, or behavioural profiling
+          technologies.
+</p> <p>
+All information is stored securely and retained only for as long as
+          necessary to respond to the message. Visitors may request the removal
+          of their details at any time by contacting the site owner directly.
+</p> <p>
+This website operates in accordance with UK GDPR and EU GDPR
+          requirements. The policy is reviewed and updated whenever data
+          practices change.
+</p> </div> </div> </section>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const n=document.getElementById("hamburger"),e=document.getElementById("mobile-menu"),s=document.getElementById("nav");if(!n||!e||!s)return;let t=!1;n.addEventListener("click",o=>{o.stopPropagation(),t=!t,e.classList.toggle("hidden",!t),e.classList.toggle("pointer-events-none",!t),e.classList.toggle("pointer-events-auto",t)}),document.addEventListener("click",o=>{const d=o.target;if(!d)return;n.contains(d)||e.contains(d)||(t=!1,e.classList.add("hidden","pointer-events-none"),e.classList.remove("pointer-events-auto"))}),window.addEventListener("scroll",()=>{window.scrollY>50?(s.classList.add("sticky","top-0","bg-bgsecondary/80","backdrop-blur-md","shadow-lg"),s.classList.remove("absolute")):(s.classList.remove("sticky","top-0","bg-bgsecondary/80","backdrop-blur-md","shadow-lg"),s.classList.add("absolute"))})});</script> <footer class="bg-bgprimary pb-20 pt-10"> <img src="/linemoun.webp" alt="Calm alpine detail" class="w-full h-auto rounded-lg object-cover opacity-25"> <div class="content-container relative"> <!-- CENTERED TEXT --> <div class="text-center text-primary">
+© EIRA.digital 2026 •
+<a href="/privacy" class="hover:opacity-70"> Privacy Policy </a> </div> </div> </footer> </body></html>

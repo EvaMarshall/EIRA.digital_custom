@@ -45,21 +45,26 @@ export default function ContactForm() {
     if (!validate()) return;
 
     setLoading(true);
-
+    // Build the sanitized object FIRST
     const safeForm = {
       name: sanitize(form.name),
       email: sanitize(form.email),
       message: sanitize(form.message),
     };
 
+    const formData = new FormData();
+    formData.append("name", safeForm.name);
+    formData.append("email", safeForm.email);
+    formData.append("message", safeForm.message);
+
+
     try {
       const res = await fetch("https://formsubmit.co/3177eff7779a172d617a29d3e2b74d2f", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(safeForm),
+        body: formData
       });
 
-      if (res.ok) {
+      if (res.status === 200) {
         setSubmitted(true);
       } else {
         setFailed(true);
@@ -70,6 +75,7 @@ export default function ContactForm() {
 
     setLoading(false);
   };
+
 
   return (
     <section className="w-full bg-bgprimary py-20">
@@ -143,8 +149,8 @@ export default function ContactForm() {
                 type="submit"
                 disabled={loading}
                 className={`px-6 py-3 rounded-md text-lg transition ${loading
-                    ? "opacity-50 cursor-not-allowed bg-[#D7B7C4] text-bgprimary"
-                    : "bg-[#D7B7C4] text-bgprimary hover:opacity-80"
+                  ? "opacity-50 cursor-not-allowed bg-[#D7B7C4] text-bgprimary"
+                  : "bg-[#D7B7C4] text-bgprimary hover:opacity-80"
                   }`}
               >
                 {loading ? "Sending…" : "Send Message"}
