@@ -86,7 +86,13 @@ export default function ContactForm() {
 
         <div className="max-w-prose mx-auto">
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              action="https://formsubmit.co/3177eff7779a172d617a29d3e2b74d2f"
+              method="POST"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+
 
               {/* Honeypot field */}
               <input
