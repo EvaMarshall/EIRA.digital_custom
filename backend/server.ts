@@ -1,9 +1,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+
+dotenv.config(); // MUST come before importing transporter
+
 import { transporter } from "./mailer";
 
-dotenv.config();
 
 const app = express();
 app.use(cors());
