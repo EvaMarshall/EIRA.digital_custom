@@ -59,14 +59,10 @@ export default function ContactForm() {
 
 
     try {
-      const res = await fetch("http://localhost:3000/contact", {
+      const res = await fetch("https://formsubmit.co/3177eff7779a172d617a29d3e2b74d2f", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(safeForm)
+        body: formData
       });
-
 
       if (res.status === 200) {
         setSubmitted(true);
@@ -90,7 +86,12 @@ export default function ContactForm() {
 
         <div className="max-w-prose mx-auto">
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              action="https://formsubmit.co/3177eff7779a172d617a29d3e2b74d2f"
+              method="POST"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
 
 
               {/* Honeypot field */}
